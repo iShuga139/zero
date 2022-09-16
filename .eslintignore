@@ -1,0 +1,8 @@
+node_modules
+dist
+libs
+infra
+coverage
+**/app/**
+**/dist/**
+src/**/*.spec.js

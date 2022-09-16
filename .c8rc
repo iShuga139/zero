@@ -1,0 +1,17 @@
+{
+  "verbose": true,
+  "all": true,
+  "checkCoverage": true,
+  "reporter": ["json", "lcov", "text", "clover", "cobertura", "text-summary"],
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "**/*.spec.js",
+    "src/index.js"
+  ],
+  "branches": 95,
+  "lines": 95,
+  "functions": 95,
+  "statements": 95
+}

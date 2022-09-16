@@ -1,0 +1,70 @@
+{
+  "name": "zero",
+  "version": "1.0.0",
+  "author": "Jonathan Estrada",
+  "description": "Libraries to create microservices with express",
+  "license": "UNLICENSED",
+  "main": "libs/index.js",
+  "type": "module",
+  "files": [
+    "/libs/**/!(*.spec).js"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "homepage": "https://github.com/iShuga139/zero#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iShuga139/zero.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iShuga139/zero/issues"
+  },
+  "keywords": [
+    "microservices",
+    "express",
+    "mocha",
+    "lib"
+  ],
+  "scripts": {
+    "clean:app": "rimraf libs",
+    "format": "prettier --config .prettierrc --write src",
+    "postlint": "npm run format",
+    "lint": "eslint . --ext .js --fix",
+    "build": "copyfiles -u 1 -e 'src/**/*.spec.js' 'src/**/*.js' 'libs'",
+    "prebuild": "npm run clean:app && npm run lint",
+    "test": "c8 mocha --exit --recursive 'src/**/*.spec.js'",
+    "posttest": "mocha --exit --recursive 'src/**/*.spec.js' --reporter mocha-sonarqube-reporter --reporter-options output=test-report.xml",
+    "coverage:open": "open ./coverage/lcov-report/index.html",
+    "coverage:open-win": "start ./coverage/lcov-report/index.html"
+  },
+  "devDependencies": {
+    "c8": "~7.12.0",
+    "chai": "~4.3.6",
+    "copyfiles": "~2.4.1",
+    "dotenv": "~16.0.2",
+    "eslint": "~8.23.1",
+    "eslint-plugin-import": "~2.26.0",
+    "eslint-plugin-node": "~11.1.0",
+    "eslint-plugin-promise": "~6.0.1",
+    "eslint-plugin-security": "~1.5.0",
+    "eslint-plugin-sonarjs": "~0.15.0",
+    "husky": "~8.0.1",
+    "mocha": "~10.0.0",
+    "mocha-sonarqube-reporter": "~1.0.2",
+    "nock": "~13.2.9",
+    "prettier": "~2.7.1",
+    "rimraf": "~3.0.2",
+    "supertest": "~6.2.4"
+  },
+  "dependencies": {
+    "axios": "~0.27.2",
+    "cors": "~2.8.5",
+    "express": "~4.18.1",
+    "express-winston": "~4.2.0",
+    "helmet": "~6.0.0",
+    "jsonwebtoken": "~8.5.1",
+    "uuid": "~9.0.0",
+    "winston": "~3.8.2"
+  }
+}
