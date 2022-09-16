@@ -2,7 +2,7 @@
   "name": "zero",
   "version": "1.0.0",
   "author": "Jonathan Estrada",
-  "description": "Libraries to create microservices with express",
+  "description": "Library to create microservices with express",
   "license": "UNLICENSED",
   "main": "libs/index.js",
   "type": "module",
